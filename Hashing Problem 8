@@ -6,20 +6,18 @@ public class SymmetricPair {
 
 	public static void main(String args[]){
 		int[][] list={{1,3},{2,5},{3,5},{7,4},{5,3},{8,7},{3,1}};
-		int i,j,len;
+		int i,j=0,len;
 		len=list.length;
 		HashMap<Integer,Integer> hm=new HashMap<Integer,Integer>();
 		//Add elements to the map
 		for(i=0;i<len;i++){
-			for(j=0;j<1;j++){
-				if(hm.containsKey(list[i][j+1])&&(hm.get(list[i][j+1])==list[i][j])){
-					System.out.println("Item "+list[i][j]+","+list[i][j+1]+" and "+list[i][j+1]+","+list[i][j]);						
-					
-				}
-				else{
-					hm.put(list[i][j],list[i][j+1]);
-				}
+			if(hm.containsKey(list[i][j+1])&&(hm.get(list[i][j+1])==list[i][j])){
+				System.out.println("Item "+list[i][j]+","+list[i][j+1]+" and "+list[i][j+1]+","+list[i][j]);						
 			}
+			else{
+				hm.put(list[i][j],list[i][j+1]);
+			}
+		
 		}
 	
 	}
